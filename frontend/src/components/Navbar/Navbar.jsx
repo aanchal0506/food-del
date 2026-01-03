@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { assets } from '../../assets/assets'
 import './Navbar.css'
 const Navbar = () => {
-    const [menu,setMenu]=useState("");
+    const [menu,setMenu]=useState("All");
   return (
     <div className='navbar'>
       <img src={assets.logo} alt='Logo' className='logo' />
