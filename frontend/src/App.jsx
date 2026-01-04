@@ -1,15 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from './components/Navbar/Navbar'
 import Cart from './pages/Cart/Cart'
 import Home from './pages/Home/Home'
 import PlaceOrder from './pages/PlaceOrder/PlaceOrder'
 import Footer from './components/Footer/Footer'
+import LoginFolder from './components/LoginFolder/LoginFolder'
 import {Route,Routes} from 'react-router-dom'
 const App = () => {
+  const[showLogin,setShowLogin]=useState(false)
   return (
     <>
+    {showLogin?<LoginFolder setShowLogin={setShowLogin}/>:<></>}
     <div className='app'>
-      <Navbar />
+      <Navbar setShowLogin={setShowLogin}/>
       <Routes>
         <Route path='/' element={<Home />}/>
         <Route path='/cart' element={<Cart />}/>
